@@ -14,7 +14,7 @@ const Contact = () => {
     message: ""
   });
   
-  const [isSubmitting, setIsSubmitting] = useState(false); // حالة للتحكم في زر الإرسال
+  const [isSubmitting, setIsSubmitting] = useState(false); 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,11 +55,10 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-accent-gradient bg-clip-text text-transparent">
-            Let's Build Something Amazing
+            يلا نعمل حاجة مدهشة مع بعض
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to collaborate on your next project? Let's discuss how we can create 
-            innovative solutions together and bring your ideas to life.
+            هل أنت مستعد للتعاون في مشروعك القادم؟ دعنا نناقش كيف يمكننا معًا ابتكار حلول مبتكرة وتجسيد أفكارك.
           </p>
         </div>
 
@@ -69,12 +68,10 @@ const Contact = () => {
             <Card className="bg-card-gradient border-border">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-card-foreground">
-                  Get In Touch
+                  تواصل معنا
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  I'm always excited to discuss new opportunities and innovative projects. 
-                  Whether you're looking to build a new application or enhance an existing one, 
-                  let's explore how we can work together.
+                  أنا متحمس دائمًا لمناقشة الفرص الجديدة والمشاريع المبتكرة. سواءً كنت ترغب في بناء تطبيق جديد أو تحسين تطبيق موجود، فلنستكشف معًا كيف يمكننا العمل معًا.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -106,14 +103,14 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-card-foreground">Location</p>
-                      <p className="text-muted-foreground">Available for Remote Work</p>
+                      <p className="text-muted-foreground">متاح للعمل عن بعد</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Social Links */}
                 <div className="pt-6 border-t border-border">
-                  <p className="font-medium text-card-foreground mb-4">Connect on Social</p>
+                  <p className="font-medium text-card-foreground mb-4">مواقع التواصل الاجتماعي</p>
                   <div className="flex gap-4">
                     <a 
                       href="https://github.com/Ahmed122223-g" 
@@ -144,12 +141,10 @@ const Contact = () => {
                     <Send className="text-accent" size={24} />
                   </div>
                   <h3 className="text-xl font-bold text-card-foreground">
-                    Ready to Collaborate
+                    مستعد للتعاون
                   </h3>
                   <p className="text-muted-foreground">
-                    I bring passion, technical expertise, and a commitment to excellence 
-                    to every project. Let's create something impactful together and push 
-                    the boundaries of what's possible in web development.
+                  أُضيف شغفًا وخبرةً تقنيةً والتزامًا بالتميز إلى كل مشروع. لنُبدع معًا شيئًا مؤثرًا ونُحقق أقصى إمكانات تطوير الويب.
                   </p>
                 </div>
               </CardContent>
@@ -160,24 +155,24 @@ const Contact = () => {
           <Card className="bg-card-gradient border-border">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-card-foreground">
-                Send a Message
+                ارسال رساله
               </CardTitle>
               <CardDescription className="text-muted-foreground">
-                Fill out the form below and I'll get back to you within 24 hours.
+                قم بملء النموذج أدناه وسأقوم بالرد عليك خلال 24 ساعة.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-card-foreground">
-                    Name
+                    الاسم
                   </label>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your full name"
+                    placeholder="ادحل اسمك"
                     required
                     className="bg-input border-border text-foreground focus:border-accent"
                   />
@@ -185,7 +180,7 @@ const Contact = () => {
                 
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-card-foreground">
-                    Email
+                    البريد الالكتروني
                   </label>
                   <Input
                     id="email"
@@ -193,7 +188,7 @@ const Contact = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="your.email@example.com"
+                    placeholder="ادخل بريدك الالكتروني"
                     required
                     className="bg-input border-border text-foreground focus:border-accent"
                   />
@@ -201,14 +196,14 @@ const Contact = () => {
                 
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium text-card-foreground">
-                    Message
+                    الرساله
                   </label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your project or how we can work together..."
+                    placeholder="أخبرني عن مشروعك أو كيف يمكننا العمل معًا..."
                     rows={6}
                     required
                     className="bg-input border-border text-foreground focus:border-accent resize-none"
@@ -216,7 +211,7 @@ const Contact = () => {
                 </div>
                 
                 <Button 
-                  type="submit" 
+                  type="ارسال" 
                   size="lg" 
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary transition-all duration-300 hover:shadow-glow-primary hover:scale-105"
                   disabled={isSubmitting}
