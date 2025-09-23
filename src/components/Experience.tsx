@@ -5,17 +5,17 @@ import { CalendarDays, MapPin } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Freelance Web Developer",
-      company: "Self-Employed",
-      location: "Remote",
-      period: "2024 - present",
-      type: "Freelance",
-      description: "Provided web development services to small businesses and startups. Managed full project lifecycle from requirements gathering to deployment.",
+      title: "مطور ويب في العمل الحر",
+      company: "نوظيف شخصي",
+      location: "العمل عن بعد",
+      period: "2024 - الان",
+      type: "العمل الحر",
+      description: "قدّمنا خدمات تطوير الويب للشركات الصغيرة والناشئة. أدرنا دورة حياة المشروع كاملةً، من جمع المتطلبات إلى النشر.",
       achievements: [
-        "Completed 5+ projects for satisfied clients",
-        "Delivered all projects on time and within budget",
-        "Built long-term relationships with repeat clients",
-        "Gained experience with diverse business requirements"
+        "تم إكمال أكثر من 5 مشاريع للعملاء الراضين",
+        "تم تسليم جميع المشاريع في الوقت المحدد وضمن الميزانية",
+        "بناء علاقات طويلة الأمد مع العملاء المتكررين",
+        "اكتسبت خبرة في متطلبات الأعمال المتنوعة"
       ],
       technologies: ["JavaScript", "React", "python", "pgstoreSQL", "vercel"]
     }
@@ -26,10 +26,10 @@ const Experience = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-accent-gradient bg-clip-text text-transparent">
-            Professional Experience
+            الخبره
           </h2>
           <p className="text-xl text-muted-foreground">
-            A journey of growth, learning, and impactful contributions
+              رحلة من النمو والتعلم والمساهمات المؤثرة
           </p>
         </div>
 
@@ -75,7 +75,7 @@ const Experience = () => {
                 </p>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground mb-3">Key Achievements:</h4>
+                  <h4 className="text-sm font-semibold text-foreground mb-3">الإنجازات الاساسيه:</h4>
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -87,7 +87,7 @@ const Experience = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground mb-3">Technologies Used:</h4>
+                  <h4 className="text-sm font-semibold text-foreground mb-3">الادوات و اللغات المستخدمه:</h4>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
                       <Badge 
