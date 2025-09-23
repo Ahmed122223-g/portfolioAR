@@ -27,8 +27,7 @@ const Hero = () => {
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          Crafting scalable web applications with modern technologies. 
-          Passionate about clean code, innovative solutions, and continuous learning.
+          تصميم تطبيقات ويب قابلة للتطوير باستخدام أحدث التقنيات. شغوف بالبرمجة النظيفة والحلول المبتكرة والتعلم المستمر.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -37,7 +36,7 @@ const Hero = () => {
             className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary transition-all duration-300 hover:shadow-glow-primary hover:scale-105"
             onClick={() => scrollToSection("projects")}
           >
-            View My Work
+            شاهد اعمالي
           </Button>
           
           <Button 
@@ -46,7 +45,7 @@ const Hero = () => {
             className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300"
             onClick={() => scrollToSection("contact")}
           >
-            Get In Touch
+            تواصل معنا
           </Button>
         </div>
 
