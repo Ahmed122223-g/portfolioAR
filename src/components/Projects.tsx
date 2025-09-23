@@ -6,40 +6,40 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "Full-featured online store with user authentication, payment processing, inventory management, and admin dashboard. Built with React frontend and node.js backend.",
+      title: "منصة تجارة إلكترونية",
+      description: "متجر إلكتروني متكامل فيه تسجيل دخول المستخدمين، معالجة الدفع، إدارة المخزون، ولوحة تحكم للأدمن. مبني بـ React في الواجهة الأمامية و node.js في الخلفية.",
       technologies: ["React", "node.js", "PostgreSQL", "Stripe", "Redis", "Docker"],
-      features: ["User Authentication", "Payment Processing", "Inventory Management", "Admin Dashboard", "Order Tracking"],
+      features: ["تسجيل دخول المستخدمين", "معالجة الدفع", "إدارة المخزون", "لوحة تحكم الأدمن", "تتبع الطلبات"],
       github: "https://github.com/Ahmed122223-g/E-commerce-Platform",
       demo: "https://github.com/Ahmed122223-g/E-commerce-Platform",
-      status: "Live"
+      status: "شغال"
     },
     {
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, team workspaces, file sharing, and progress tracking. Features drag-and-drop interface and notifications.",
-      technologies: ["React", "Node.js", "pgstoreSQL", "Express", "JWT"],
-      features: ["Real-time Collaboration", "Drag & Drop Interface", "File Sharing", "Team Workspaces", "Push Notifications"],
+      title: "تطبيق إدارة المهام",
+      description: "أداة لإدارة المشاريع بشكل تعاوني مع تحديثات لحظية، مساحات عمل للفرق، مشاركة ملفات، وتتبع التقدم. يتميز بواجهة سحب وإفلات وإشعارات.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Express", "JWT"],
+      features: ["تعاون لحظي", "واجهة سحب وإفلات", "مشاركة ملفات", "مساحات عمل للفرق", "إشعارات فورية"],
       github: "https://ahmed-mohamed-portfolio.vercel.app",
       demo: "https://ahmed-mohamed-portfolio.vercel.app",
-      status: "In Development"
+      status: "قيد التطوير"
     },
     {
-      title: "Social Media Clone",
-      description: "Instagram-inspired social platform with photo sharing, real-time messaging, stories, and social interactions. Includes content moderation and recommendation algorithms.",
+      title: "تطبيق تواصل اجتماعي (نسخة إنستجرام)",
+      description: "منصة اجتماعية مستوحاة من إنستجرام فيها مشاركة صور، محادثات فورية، خاصية القصص، والتفاعلات. تشمل خوارزميات توصية وإدارة محتوى.",
       technologies: ["React", "FastAPI", "PostgreSQL", "AWS S3"],
-      features: ["Photo Sharing", "Real-time Chat", "Stories Feature", "Like & Comment System", "Content Moderation"],
+      features: ["مشاركة الصور", "محادثات فورية", "خاصية القصص", "نظام إعجاب وتعليقات", "إدارة محتوى"],
       github: "https://ahmed-mohamed-portfolio.vercel.appg",
       demo: "https://ahmed-mohamed-portfolio.vercel.app",
-      status: "In Development"
+      status: "قيد التطوير"
     },
     {
-      title: "Portfolio Website",
-      description: "Responsive personal portfolio showcasing projects, skills, and experience. Features smooth animations, dark theme, and optimized performance with perfect lighthouse scores.",
+      title: "موقع بورتفوليو شخصي",
+      description: "موقع شخصي متجاوب لعرض المشاريع والمهارات والخبرات. فيه حركات سلسة، وضع ليلي، وأداء محسن مع نتائج ممتازة في Lighthouse.",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      features: ["Responsive Design", "Smooth Animations", "SEO Optimized", "Performance Optimized", "Contact Form"],
+      features: ["تصميم متجاوب", "حركات سلسة", "محسن للسيو", "أداء عالي", "نموذج تواصل"],
       github: "https://github.com/Ahmed122223-g/byte-brigade-portfolio",
       demo: "https://ahmed-mohamed-portfolio.vercel.app",
-      status: "Live"
+      status: "شغال"
     }
   ];
 
@@ -48,10 +48,10 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-accent-gradient bg-clip-text text-transparent">
-            Featured Projects
+            المشاريع المميزة
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Showcasing innovative solutions and technical expertise across various domains
+            عرض حلول مبتكرة وخبرات تقنية متنوعة في مجالات مختلفة
           </p>
         </div>
 
@@ -67,8 +67,8 @@ const Projects = () => {
                     {project.title}
                   </CardTitle>
                   <Badge 
-                    variant={project.status === "Live" ? "default" : "secondary"}
-                    className={project.status === "Live" ? "bg-green-500/20 text-green-400 border-green-500/30" : ""}
+                    variant={project.status === "شغال" ? "default" : "secondary"}
+                    className={project.status === "شغال" ? "bg-green-500/20 text-green-400 border-green-500/30" : ""}
                   >
                     {project.status}
                   </Badge>
@@ -79,9 +79,9 @@ const Projects = () => {
               </CardHeader>
               
               <CardContent className="space-y-4">
-                {/* Technologies */}
+                {/* التقنيات */}
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground mb-2">Technologies Used:</h4>
+                  <h4 className="text-sm font-semibold text-foreground mb-2">التقنيات المستخدمة:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="outline" className="text-xs border-accent/30 text-accent">
@@ -91,9 +91,9 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Key Features */}
+                {/* الخصائص */}
                 <div>
-                  <h4 className="text-sm font-semibold text-foreground mb-2">Key Features:</h4>
+                  <h4 className="text-sm font-semibold text-foreground mb-2">الخصائص الرئيسية:</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
                     {project.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2">
@@ -104,7 +104,7 @@ const Projects = () => {
                   </ul>
                 </div>
 
-                {/* Action Buttons */}
+                {/* الأزرار */}
                 <div className="flex gap-3 pt-4">
                   <Button 
                     size="sm" 
@@ -113,7 +113,7 @@ const Projects = () => {
                   >
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink size={16} className="mr-2" />
-                      Live Demo
+                      عرض الموقع
                     </a>
                   </Button>
                   
@@ -125,7 +125,7 @@ const Projects = () => {
                   >
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github size={16} className="mr-2" />
-                      Code
+                      الكود
                     </a>
                   </Button>
                 </div>
