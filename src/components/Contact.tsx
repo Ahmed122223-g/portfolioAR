@@ -211,13 +211,13 @@ const Contact = () => {
                 </div>
                 
                 <Button 
-                  type="ارسال" 
+                  type="submit" 
                   size="lg" 
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary transition-all duration-300 hover:shadow-glow-primary hover:scale-105"
                   disabled={isSubmitting}
                 >
                   <Send size={16} className="mr-2" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "يتم الارسال..." : "ارسل الرساله"}
                 </Button>
               </form>
             </CardContent>
