@@ -60,8 +60,8 @@ const Contact = () => {
         <div className="mx-auto max-w-6xl">
           {/* Section Header */}
           <div className="mb-20 text-center">
-            <h2 className="mb-10 text-4xl font-extrabold leading-tight tracking-wide bg-accent-gradient bg-clip-text text-transparent md:text-5xl">
-              يلا نعمل حاجة مدهشة مع بعض
+            <h2 className="mb-4 text-4xl font-extrabold leading-tight tracking-wide bg-accent-gradient bg-clip-text text-transparent md:text-5xl">
+              Contact us
             </h2>
             <p className="mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
               هل أنت مستعد للتعاون في مشروعك القادم؟ خلينا نتكلم إزاي نبتكر حلول
