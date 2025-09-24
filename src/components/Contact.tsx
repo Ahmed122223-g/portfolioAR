@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Github, Linkedin, Send } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,37 +13,42 @@ const Contact = () => {
     email: "",
     message: ""
   });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false); 
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const SERVICE_ID = 'service_2f48dph'; 
-    const TEMPLATE_ID = 'template_c0dava2'; 
-    const PUBLIC_KEY = 'lf9808sp2x09zierj';
+    const SERVICE_ID = "service_2f48dph";
+    const TEMPLATE_ID = "template_c0dava2";
+    const PUBLIC_KEY = "lf9808sp2x09zierj";
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message,
-      to_email: "ahmedmohamed1442006m@gmail.com"
-    }, PUBLIC_KEY)
-    .then((result) => {
-      console.log('SUCCESS!', result.status, result.text);
-      toast.success("Message sent successfully! I'll get back to you soon.");
-      setFormData({ name: "", email: "", message: "" });
-    }, (error) => {
-      console.log('FAILED...', error.text);
-      toast.error("Failed to send message. Please try again later.");
-    })
-    .finally(() => {
-      setIsSubmitting(false);
-    });
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: "ahmedmohamed1442006m@gmail.com"
+        },
+        PUBLIC_KEY
+      )
+      .then(() => {
+        toast.success("تم إرسال الرسالة بنجاح! هتواصل معاك قريب.");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch(() => {
+        toast.error("فشل إرسال الرسالة. حاول تاني بعد شوية.");
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
@@ -51,44 +56,50 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-accent-gradient bg-clip-text text-transparent">
+    <section id="contact" className="px-4 py-20">
+      <div className="mx-auto max-w-6xl">
+        {/* Section Header */}
+        <div className="mb-16 text-center">
+          <h2 className="mb-6 bg-accent-gradient bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
             يلا نعمل حاجة مدهشة مع بعض
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            هل أنت مستعد للتعاون في مشروعك القادم؟ دعنا نناقش كيف يمكننا معًا ابتكار حلول مبتكرة وتجسيد أفكارك.
+          <p className="mx-auto max-w-3xl text-xl text-muted-foreground">
+            هل أنت مستعد للتعاون في مشروعك القادم؟ خلينا نتكلم إزاي نبتكر حلول
+            مبتكرة ونحوّل أفكارك لواقع.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+        <div className="grid gap-12 lg:grid-cols-2">
+          {/* Contact Info */}
           <div className="space-y-8">
-            <Card className="bg-card-gradient border-border">
+            <Card className="border-border bg-card-gradient">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-card-foreground">
-                  تواصل معنا
+                  تواصل معايا
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  أنا متحمس دائمًا لمناقشة الفرص الجديدة والمشاريع المبتكرة. سواءً كنت ترغب في بناء تطبيق جديد أو تحسين تطبيق موجود، فلنستكشف معًا كيف يمكننا العمل معًا.
+                  متحمس دايمًا أتكلم عن أفكار جديدة أو مشاريع مميزة. سواء عايز
+                  تعمل تطبيق جديد أو تطور حاجة موجودة، خلينا نستكشف سوا إزاي نشتغل
+                  مع بعض.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                {/* Contact Details */}
+                {/* Details */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-accent/20 rounded-lg">
+                    <div className="rounded-lg bg-accent/20 p-3">
                       <Mail className="text-accent" size={20} />
                     </div>
                     <div>
                       <p className="font-medium text-card-foreground">Email</p>
-                      <p className="text-muted-foreground">ahmedmohamed1442006m@gmail.com</p>
+                      <p className="text-muted-foreground">
+                        ahmedmohamed1442006m@gmail.com
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-accent/20 rounded-lg">
+                    <div className="rounded-lg bg-accent/20 p-3">
                       <Phone className="text-accent" size={20} />
                     </div>
                     <div>
@@ -96,9 +107,9 @@ const Contact = () => {
                       <p className="text-muted-foreground">+201141887123</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-accent/20 rounded-lg">
+                    <div className="rounded-lg bg-accent/20 p-3">
                       <MapPin className="text-accent" size={20} />
                     </div>
                     <div>
@@ -108,23 +119,25 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Social Links */}
-                <div className="pt-6 border-t border-border">
-                  <p className="font-medium text-card-foreground mb-4">مواقع التواصل الاجتماعي</p>
+                {/* Socials */}
+                <div className="border-border border-t pt-6">
+                  <p className="mb-4 font-medium text-card-foreground">
+                    مواقع التواصل
+                  </p>
                   <div className="flex gap-4">
-                    <a 
-                      href="https://github.com/Ahmed122223-g" 
-                      target="_blank" 
+                    <a
+                      href="https://github.com/Ahmed122223-g"
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-secondary rounded-lg hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110"
+                      className="rounded-lg bg-secondary p-3 transition-all duration-300 hover:scale-110 hover:bg-accent hover:text-accent-foreground"
                     >
                       <Github size={20} />
                     </a>
-                    <a 
-                      href="https://www.linkedin.com/in/ahmed-mohamed-8ab118369?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-                      target="_blank" 
+                    <a
+                      href="https://www.linkedin.com/in/ahmed-mohamed-8ab118369"
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-secondary rounded-lg hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110"
+                      className="rounded-lg bg-secondary p-3 transition-all duration-300 hover:scale-110 hover:bg-accent hover:text-accent-foreground"
                     >
                       <Linkedin size={20} />
                     </a>
@@ -133,38 +146,42 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Professional Statement */}
-            <Card className="bg-card-gradient border-border">
+            {/* Small Statement */}
+            <Card className="border-border bg-card-gradient">
               <CardContent className="pt-6">
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto">
+                <div className="space-y-4 text-center">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/20">
                     <Send className="text-accent" size={24} />
                   </div>
                   <h3 className="text-xl font-bold text-card-foreground">
                     مستعد للتعاون
                   </h3>
                   <p className="text-muted-foreground">
-                  أُضيف شغفًا وخبرةً تقنيةً والتزامًا بالتميز إلى كل مشروع. لنُبدع معًا شيئًا مؤثرًا ونُحقق أقصى إمكانات تطوير الويب.
+                    بحط شغف + خبرة تقنية + التزام بالتميز في أي مشروع. خلينا
+                    نعمل حاجة تفرق وتحقق أقصى إمكانيات الويب.
                   </p>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Contact Form */}
-          <Card className="bg-card-gradient border-border">
+          {/* Form */}
+          <Card className="border-border bg-card-gradient">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-card-foreground">
-                ارسال رساله
+                ابعت رسالة
               </CardTitle>
               <CardDescription className="text-muted-foreground">
-                قم بملء النموذج أدناه وسأقوم بالرد عليك خلال 24 ساعة.
+                اكتب بياناتك في الفورم ده، وهرد عليك في خلال 24 ساعة.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-card-foreground">
+                  <label
+                    htmlFor="name"
+                    className="text-sm font-medium text-card-foreground"
+                  >
                     الاسم
                   </label>
                   <Input
@@ -172,15 +189,18 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="ادحل اسمك"
+                    placeholder="ادخل اسمك"
                     required
-                    className="bg-input border-border text-foreground focus:border-accent"
+                    className="bg-input text-foreground focus:border-accent"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-card-foreground">
-                    البريد الالكتروني
+                  <label
+                    htmlFor="email"
+                    className="text-sm font-medium text-card-foreground"
+                  >
+                    البريد الإلكتروني
                   </label>
                   <Input
                     id="email"
@@ -188,36 +208,39 @@ const Contact = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="ادخل بريدك الالكتروني"
+                    placeholder="ادخل بريدك الإلكتروني"
                     required
-                    className="bg-input border-border text-foreground focus:border-accent"
+                    className="bg-input text-foreground focus:border-accent"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-card-foreground">
-                    الرساله
+                  <label
+                    htmlFor="message"
+                    className="text-sm font-medium text-card-foreground"
+                  >
+                    الرسالة
                   </label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="أخبرني عن مشروعك أو كيف يمكننا العمل معًا..."
+                    placeholder="احكيلي عن مشروعك أو إزاي نشتغل مع بعض..."
                     rows={6}
                     required
-                    className="bg-input border-border text-foreground focus:border-accent resize-none"
+                    className="resize-none bg-input text-foreground focus:border-accent"
                   />
                 </div>
-                
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary transition-all duration-300 hover:shadow-glow-primary hover:scale-105"
+
+                <Button
+                  type="submit"
+                  size="lg"
                   disabled={isSubmitting}
+                  className="w-full bg-primary text-primary-foreground shadow-glow-primary transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-glow-primary"
                 >
                   <Send size={16} className="mr-2" />
-                  {isSubmitting ? "يتم الارسال..." : "ارسل الرساله"}
+                  {isSubmitting ? "يتم الإرسال..." : "إرسال الرسالة"}
                 </Button>
               </form>
             </CardContent>
