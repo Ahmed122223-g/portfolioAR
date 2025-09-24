@@ -56,17 +56,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="px-4 py-20">
-      <div className="mx-auto max-w-6xl">
-        {/* Section Header */}
-        <div className="mb-16 text-center">
-          <h2 className="mb-6 bg-accent-gradient bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
-            يلا نعمل حاجة مدهشة مع بعض
-          </h2>
-          <p className="mx-auto max-w-3xl text-xl text-muted-foreground">
-            هل أنت مستعد للتعاون في مشروعك القادم؟ خلينا نتكلم إزاي نبتكر حلول
-            مبتكرة ونحوّل أفكارك لواقع.
-          </p>
+      <section id="contact" className="px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          {/* Section Header */}
+          <div className="mb-20 text-center">
+            <h2 className="mb-4 text-4xl font-extrabold leading-tight tracking-wide bg-accent-gradient bg-clip-text text-transparent md:text-5xl">
+              يلا نعمل حاجة مدهشة مع بعض
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
+              هل أنت مستعد للتعاون في مشروعك القادم؟ خلينا نتكلم إزاي نبتكر حلول
+              مبتكرة ونحوّل أفكارك لواقع.
+            </p>
+          </div>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2">
