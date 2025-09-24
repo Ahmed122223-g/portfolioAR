@@ -78,7 +78,7 @@ const Contact = () => {
     <section id="contact" className="px-4 py-20">
       <div className="mx-auto max-w-6xl">
         <div className="mb-20 text-center">
-          <h2 className="mb-[60px] text-4xl font-extrabold bg-accent-gradient bg-clip-text text-transparent md:text-5xl leading-relaxed">
+          <h2 className="mb-16 text-4xl font-extrabold bg-accent-gradient bg-clip-text text-transparent md:text-5xl leading-relaxed">
             يلا نعمل حاجة مدهشة مع بعض
           </h2>
           <p className="mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
