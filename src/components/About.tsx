@@ -9,7 +9,7 @@ const About = () => {
         {/* العنوان */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-accent-gradient bg-clip-text text-transparent leading-tight tracking-wide">
-            من أنا؟
+           About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             مطوّر ويب متحمس يتمتع بخبرة في تقنيات الويب الحديثة
